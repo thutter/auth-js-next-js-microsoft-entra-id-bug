@@ -1,8 +1,9 @@
 import CustomLink from "@/components/custom-link"
 import { auth } from "auth"
+import {LogIn} from "lucide-react";
+import {SignIn} from "@/components/auth-components";
 
 export default async function Index() {
-  const session = await auth()
 
   return (
     <div className="flex flex-col gap-6">
@@ -29,9 +30,7 @@ export default async function Index() {
         <div className="rounded-t-md bg-gray-200 p-4 font-bold">
           Current Session
         </div>
-        <pre className="whitespace-pre-wrap break-all px-4 py-6">
-          {JSON.stringify(session, null, 2)}
-        </pre>
+          <SignIn provider="microsoft-entra-id" />
       </div>
     </div>
   )
